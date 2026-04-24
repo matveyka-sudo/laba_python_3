@@ -1,20 +1,17 @@
-from src.power import power_function
-from src.constants import SAMPLE_CONSTANT
+from src.generator_1 import Source
+from src.generator_2 import Source1
+from src.proc import check
 
 
 def main() -> None:
-    """
-    Обязательнная составляющая программ, которые сдаются. Является точкой входа в приложение
-    :return: Данная функция ничего не возвращает
-    """
-
-    target, degree = map(int, input("Введите два числа разделенные пробелом: ").split(" "))
-
-    result = power_function(target=target, power=degree)
-
-    print(result)
-
-    print(SAMPLE_CONSTANT)
+    '''Главная функция, точка входа в программу'''
+    sources=[
+        Source(),
+        Source1("12.txt")
+    ]
+    result=check(sources)
+    for task in result:
+        print(task)
 
 if __name__ == "__main__":
     main()
