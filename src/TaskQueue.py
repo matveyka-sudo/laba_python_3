@@ -18,7 +18,7 @@ class TaskQueue:
         """метод удаления для очереди"""
         self._iter = None
         logger.info("задача удалена")
-        return self._tasks.pop()
+        return self._tasks.pop(0)
 
     def __len__(self)->int:
         logger.info("Длина очереди:")

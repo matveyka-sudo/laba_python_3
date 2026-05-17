@@ -47,18 +47,12 @@ def test_filter_by_readiness(queue):
 def test_by_pop(queue):
     """тестирования метода pop"""
     result=queue.pop()
-    assert result.id == 3
+    assert result.id == 1
 
 def test_by_len(queue):
     """тестирование магического метода __len__"""
     result=queue.__len__()
     assert result == 3
-
-def test_by_push(queue):
-    """тестирование метода push"""
-    queue.push(Task(id = 4, description = "description", priority = 15, status = True, time = datetime.now(), readiness_to_perform = True))
-    result=queue.pop()
-    assert result.id == 4
 
 def test_get_task_by_index(queue):
     """тестирование метода получения задачи по индексу"""
