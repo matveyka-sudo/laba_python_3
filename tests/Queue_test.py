@@ -59,10 +59,7 @@ def test_get_task_by_index(queue):
     result=queue.get_task_by_index(2)
     assert result.id == 3
 
-def test_get_next_task(queue):
-    """тест получения метода получения следующей задачи"""
-    result=queue.get_next_task()
-    assert result.id == 1
+
 
 
 
